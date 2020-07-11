@@ -24,9 +24,8 @@ for case in range(cases):
         mv = parse_move(mv)
     moves = ['N', "E", "S," "W"]
     d = {move: mv.count(move) for move in mv}
-    y = d.get('N', 0) - d.get("S", 0)
+    y = - d.get('N', 0) + d.get("S", 0)
     x = - d.get('W',0) + d.get("E", 0)
-    ypos = (y+1) % (10 ** 9)
-    xpos = (x+1) % (10 ** 9)
+    ypos = (y) % (10 ** 9) + 1
+    xpos = (x) % (10 ** 9) + 1
     print('Case #' + str(case+1) + ": " + str(xpos) + " " + str(ypos)) 
-
